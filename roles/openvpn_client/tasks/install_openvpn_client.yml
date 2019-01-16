@@ -2,7 +2,3 @@
 
 - name: Install openVPN
   apt: name=openvpn state=present
-
-#- name: Install resolvconf
-#  apt: name=resolvconf state=present
-#  when: openvpn_dns

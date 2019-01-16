@@ -5,3 +5,10 @@
   apt: name={{ item }} state=present
   with_items:
   - openvpn=2.3.10-1ubuntu2.1
+
+- name: Enable openvpn client
+  become: true
+  systemd:
+    name: openvpn
+    enabled: true
+  check_mode: yes

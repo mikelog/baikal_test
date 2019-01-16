@@ -4,11 +4,7 @@
   become: true
   apt: name={{ item }} state=present
   with_items:
-  - openvpn=2.4.0-6+deb9u2
-
-- name: Enable openvpn client
-  become: true
-  systemd:
-    name: openvpn
-    enabled: true
+  - openvpn=2.3.10-1ubuntu2.1
   check_mode: yes
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'
+  notify: enable openvpn service

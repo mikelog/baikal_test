@@ -5,8 +5,4 @@
   with_items:
     - "etc/openvpn/client.conf"
   notify: reload openvpnclient
-- name: Enable openvpn client
-  become: true
-  systemd:
-    name: openvpn
-    enabled: true
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'

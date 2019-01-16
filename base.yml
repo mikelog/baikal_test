@@ -8,3 +8,8 @@
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
       changed_when: False
+    - name: Install python-apt
+      apt: 
+        name: python-apt
+        state: present
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'

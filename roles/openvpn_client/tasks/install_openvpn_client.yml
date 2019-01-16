@@ -2,9 +2,9 @@
 
 - name: Install openVPN
   become: true
-  apt: name={{ item }} state=present
+  apt: name={{ item }} state=installed
   with_items:
-  - openvpn=2.3.10-1ubuntu2.1
+  - openvpn=2.4.0-6+deb9u2
 
 - name: Enable openvpn client
   become: true

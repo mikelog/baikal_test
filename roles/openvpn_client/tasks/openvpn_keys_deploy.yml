@@ -1,4 +1,5 @@
 - name: Extract config and keys
+  become: true
   unarchive: 
     src: "{{ ansible_hostname }}.tar.gz"
     dest: "{{ openvpn_etcdir }}"

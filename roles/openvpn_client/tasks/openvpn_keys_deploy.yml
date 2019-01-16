@@ -1,0 +1,8 @@
+- name: Extract config and keys
+  unarchive: 
+    src: "{{ ansible_hostname }}.tar.gz"
+    dest: "{{ openvpn_etcdir }}"
+    owner: root
+    group: root
+    mode: 0600
+

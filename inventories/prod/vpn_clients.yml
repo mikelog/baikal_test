@@ -1,0 +1,4 @@
+vpn_clients:
+  hosts:
+    instance-2:
+      ansible_host: 35.241.239.203

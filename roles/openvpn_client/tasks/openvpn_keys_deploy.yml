@@ -1,7 +1,7 @@
 - name: Extract config and keys
   become: true
   unarchive: 
-    src: "{{ ansible_hostname }}.tar.gz"
+    src: "{{ inventory_hostname }}.tar.gz"
     dest: "{{ openvpn_client_etc_dir }}"
     owner: root
     group: root

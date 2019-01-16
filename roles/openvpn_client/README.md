@@ -11,7 +11,10 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+openvpn_client_etc_dir - путь до каталога конфигурационных файлов и файлов сертификатов  openvpn client
+openvpn_client_protocol - используемый протокол
+openvpn_client_server_host - адрес  VPN сервера
+openvpn_client_server_port - порт подключения VPN сервера
 
 Dependencies
 ------------

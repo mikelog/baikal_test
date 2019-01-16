@@ -12,4 +12,4 @@
       apt: 
         name: python-apt
         state: present
-  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'
+    when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'

@@ -2,6 +2,6 @@
 - name: reload openvpnclient
   service: name=openvpn state=restarted
 - name: Openvpn client status
-  service_facts: openvpn
+  service_facts: 
 - debug:
-    var: ansible_facts.services
+    var: ansible_facts.services['openvpn']

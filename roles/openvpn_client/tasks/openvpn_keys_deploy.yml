@@ -2,7 +2,7 @@
   become: true
   unarchive: 
     src: "{{ ansible_hostname }}.tar.gz"
-    dest: "{{ openvpn_etcdir }}"
+    dest: "{{ openvpn_client_etc_dir }}"
     owner: root
     group: root
     mode: 0600

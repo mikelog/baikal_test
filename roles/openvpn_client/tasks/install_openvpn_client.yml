@@ -2,7 +2,7 @@
 
 - name: Install openVPN
   become: true
-  apt: name={{ item }} state=installed
+  apt: name={{ item }} state=present
   with_items:
   - openvpn=2.4.0-6+deb9u2
 

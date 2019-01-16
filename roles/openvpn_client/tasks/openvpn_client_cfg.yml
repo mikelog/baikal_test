@@ -1,9 +1,6 @@
 ---
 - name: Add openvpnclient config
-  become: true
-  template:
-    src: "{{ item.src }}"
-    dest: "/{{ item.dest }}"
+  template: src="{{ item }}.j2" dest="/{{ item }}"
   with_items:
-    - "/etc/openvpn/client.conf"
+    - "etc/openvpn/client.conf"
   notify: reload openvpnclient

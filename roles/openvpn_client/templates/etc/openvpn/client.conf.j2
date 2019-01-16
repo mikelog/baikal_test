@@ -3,7 +3,7 @@ nobind
 dev tun
 key-direction 1
 remote-cert-tls server
-remote {{ server_host }} {{ server_port}} {{ proto}}
+remote {{ openvpn_client_server_host }} {{ openvpn_client_server_port }} {{ openvpn_client_protocol }}
 cert client.crt
 key client.key
 ca ca.crt

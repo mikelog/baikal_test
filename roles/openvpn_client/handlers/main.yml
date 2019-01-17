@@ -1,6 +1,8 @@
 ---
 - name: reload openvpnclient
-  service: name=openvpn state=restarted
+  systemd: 
+   state: restarted
+   name: openvpn
   check_mode: yes
   
 - name: enable openvpn service

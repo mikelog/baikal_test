@@ -4,5 +4,4 @@
   template: src="{{ item }}.j2" dest="/{{ item }}"
   with_items:
     - "etc/openvpn/client.conf"
-  notify: reload puma
-  
+  notify: reload openvpn

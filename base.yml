@@ -5,7 +5,7 @@
   gather_facts: true
 
   tasks:
-    - debug: msg="OS ver is {{ ansible_distribution }} {{ ansible_distribution }}"
+    - debug: msg="OS ver is {{ ansible_distribution }} {{ ansible_distribution_release }}"
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
       changed_when: False
@@ -13,4 +13,4 @@
       apt: 
         name: python-apt
         state: present
-      when: ansible_distribution == 'Ubuntu' and ansible_distribution   == 'xenial'
+      when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'

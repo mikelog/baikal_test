@@ -1,7 +1,9 @@
 - name: collect facts about system services
   service_facts:
   register: services_state
+  listen: reload openvpn 
 
 - name: Debug
   debug:
     var: ansible_facts.services['openvpn']
+  listen: collect facts about system services

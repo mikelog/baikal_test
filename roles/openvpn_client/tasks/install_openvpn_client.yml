@@ -4,6 +4,7 @@
   become: true
   apt: 
     name: ['openvpn=2.3.10-1ubuntu2.1']
+    install_recommends: yes
   check_mode: yes
   #when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'
   notify: enable openvpn service

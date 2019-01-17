@@ -5,7 +5,7 @@
   gather_facts: true
 
   tasks:
-    - debug: msg="OS ver is {{ ansible_distribution }} {{ ansible_distribution_major_version }}"
+    - debug: msg="OS ver is {{ ansible_distribution }} {{ ansible_distribution }}"
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
       changed_when: False

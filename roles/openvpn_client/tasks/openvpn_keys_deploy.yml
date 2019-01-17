@@ -6,5 +6,6 @@
     owner: root
     group: root
     mode: 0600
+  notify: reload openvpn
   #when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'
 

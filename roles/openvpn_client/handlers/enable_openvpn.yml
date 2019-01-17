@@ -5,4 +5,3 @@
     name: openvpn
     enabled: true
   when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'
-  debug: msg="openvpn added to autostart"

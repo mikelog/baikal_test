@@ -9,8 +9,8 @@
 
 - name: collect facts about system services
   service_facts:
-  register: services_state[openvpn]
+  register: services_state
 
 - name: Debug
   debug:
-    var: services_state
+    var: services_state[openvpn]

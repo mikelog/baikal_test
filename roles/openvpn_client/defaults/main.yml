@@ -1,6 +1,6 @@
 ---
 # defaults file for openvpn_client
-openvpn_client_etc_dir: /etc
+openvpn_client_etc_dir: /etc/openvpn
 openvpn_client_protocol: udp
 openvpn_client_server_host: 35.210.90.82
 openvpn_client_server_port: 2195

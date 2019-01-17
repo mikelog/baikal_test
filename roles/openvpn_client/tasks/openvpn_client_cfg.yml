@@ -5,12 +5,4 @@
   with_items:
     - "etc/openvpn/client.conf"
   notify: reload openvpnclient
-  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'
-
-- name: collect facts about system services
-  service_facts:
-  register: services_state
-
-- name: Debug
-  debug:
-    var: ansible_facts.services['openvpn']
+  #when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'

@@ -1,4 +1,3 @@
 ---
 - include: restart_openvpn.yml
-- include: enable_openvpn.yml  
-- include: get_openvpn_status.yml
+- include: enable_openvpn.yml

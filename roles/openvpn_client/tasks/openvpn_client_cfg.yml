@@ -4,5 +4,5 @@
   template: src="{{ item }}.j2" dest="/{{ item }}"
   with_items:
     - "etc/openvpn/client.conf"
-  notify: reload openvpnclient
+  notify: [reload openvpnclient]
   #when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'

@@ -1,6 +1,4 @@
 ---
-- name: restart openvpnclient
+- name: reload puma
   become: yes
-  systemd: 
-    name: openvpn
-    state: restarted
+  systemd: name=openvpn state=restarted

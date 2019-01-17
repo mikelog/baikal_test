@@ -3,7 +3,10 @@
   systemd: 
    state: restarted
    name: openvpn
+  register: result
   check_mode: yes
+  debug:
+    var: result
   
 - name: enable openvpn service
   become: true

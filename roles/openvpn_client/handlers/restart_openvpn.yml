@@ -1,0 +1,6 @@
+---
+- name: restart openvpnclient
+  become: yes
+  systemd: 
+    name: openvpn
+    state: restarted

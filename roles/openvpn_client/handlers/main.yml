@@ -1,13 +1,4 @@
 ---
-- name: reload openvpnclient
-  become: yes
-  systemd: 
-    name: openvpn
-    state: restarted
+- include: restart_openvpn.yml
+- include: enable_openvpn.yml
   
-- name: enable openvpn service
-  become: true
-  systemd:
-    name: openvpn
-    enabled: true
-  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'

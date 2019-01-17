@@ -1,0 +1,7 @@
+---
+- name: enable openvpn service
+  become: true
+  systemd:
+    name: openvpn
+    enabled: true
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'

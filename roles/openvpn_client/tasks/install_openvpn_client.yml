@@ -2,9 +2,8 @@
 
 - name: Install openVPN
   become: true
-  apt: name={{ item }} state=present
-  with_items:
-  - openvpn=2.3.10-1ubuntu2.1
+  apt: 
+    name: ['openvpn=2.3.10-1ubuntu2.1']
   check_mode: yes
   when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version  == '16.04'
   notify: enable openvpn service

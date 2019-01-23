@@ -1,9 +1,15 @@
 ---
-
 - name: Install openVPN
   become: true
   apt: 
     name: ['openvpn=2.3.10-1ubuntu2.1']
     install_recommends: yes
-  #when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'
-  notify: enable openvpn service
+  register: apt_openvpnclientinstall
+
+- name: Enable OpenVpnClient
+  become: true
+  systemd:
+    name: openvpn
+    enabled: true
+  when: apt_openvpnclientinstall.changed
+

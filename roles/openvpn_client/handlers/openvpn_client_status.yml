@@ -1,0 +1,9 @@
+---
+- name: OpenVPNClien_Status
+  service_facts:
+  register: services_state
+
+- name: Debug
+  debug:
+    var: ansible_facts.services['openvpn']
+

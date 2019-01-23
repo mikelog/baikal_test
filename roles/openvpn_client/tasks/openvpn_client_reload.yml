@@ -1,0 +1,8 @@
+---
+- name: Reload openVPN Client
+  become: yes
+  service: name=openvpn state=restarted enabled=yes
+  register: openvpn_clien_reload
+  notify: 
+    - OpenVPNClien_Status
+  when: openvpn_client_config.changed or openvpn_keys_extracted.changed

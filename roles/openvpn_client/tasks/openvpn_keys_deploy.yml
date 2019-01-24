@@ -6,7 +6,8 @@
     owner: root
     group: root
     mode: 0600
-  register: openvpn_keys_extracted
+  notify:
+    - reload_openvpn
   when: openvpn_client_pers_keys  == true
 
 - name: Extract config and keys for all hosts
@@ -17,7 +18,9 @@
     owner: root
     group: root
     mode: 0600
+  notify:
+    - reload_openvpn
   when:  openvpn_client_pers_keys == false
-  register: openvpn_keys_extracted
+  
 
 

@@ -4,4 +4,5 @@
   template: 'src="{{ item }}.j2" dest="/{{ item }}"'
   with_items:
     - "etc/openvpn/client.conf"
-  register: openvpn_client_config
+  notify:
+    - reload_openvpn

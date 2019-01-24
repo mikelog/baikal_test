@@ -1,6 +1,6 @@
 vpn_clients:
   hosts:
     instance-2:
-      ansible_host: 34.76.224.196
+      ansible_host: 35.241.239.203
     instance-3:
-      ansible_host: 34.76.153.128
+      ansible_host: 35.205.73.41

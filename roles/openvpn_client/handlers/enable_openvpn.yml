@@ -1,7 +1,10 @@
 ---
-- name: enable openvpn service
+- name: enable_openvpn_service
   become: true
   systemd:
     name: openvpn
     enabled: true
-  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release  == 'xenial'
+
+- name: Show startup status openvpn clien
+  debug: "msg='OpenVPN Clien is enabled for startup on boot'"
+  listen: enable_openvpn_service

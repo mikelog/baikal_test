@@ -3,4 +3,3 @@
 - include: install_openvpn_client.yml
 - include: openvpn_keys_deploy.yml
 - include: openvpn_client_cfg.yml
-#s- include: openvpn_client_reload.yml

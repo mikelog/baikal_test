@@ -4,7 +4,6 @@ openvpn_client_ca_crt_file_name: ca.crt
 openvpn_client_client_crt_file_name: client.crt
 openvpn_client_client_key_file_name: client.key
 openvpn_client_etc_dir: /etc/openvpn
-openvpn_client_key_arch_base_name: keys
 openvpn_client_pers_keys: true
 openvpn_client_protocol: udp
 openvpn_client_server_host: 35.210.90.82

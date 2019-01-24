@@ -7,3 +7,6 @@
   debug:
     var: ansible_facts.services['openvpn']
 
+- name: openvpn_client_is_enabled
+  debug: "msg='OpenVPN Client added to autostart'"
+

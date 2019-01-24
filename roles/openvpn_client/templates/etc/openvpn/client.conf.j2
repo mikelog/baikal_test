@@ -4,11 +4,11 @@ dev tun
 key-direction 1
 remote-cert-tls server
 remote {{ openvpn_client_server_host }} {{ openvpn_client_server_port }} {{ openvpn_client_protocol }}
-cert client.crt
-key client.key
-ca ca.crt
+cert {{ openvpn_client_client_crt_file_name }}
+key {{ openvpn_client_client_key_file_name }}
+ca {{ openvpn_client_ca_crt_file_name }}
 tls-client
-tls-auth ta.key 1
+tls-auth {{ openvpn_client_ta_file_name }} 1
 key-direction 1
 auth-nocache
 comp-lzo

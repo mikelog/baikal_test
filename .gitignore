@@ -6,3 +6,6 @@
 .terraform/
 *.retry
 keys*.tar.gz
+*.key*
+*.crt*
+

@@ -1,23 +1,23 @@
-- name: Extract config and keys for each host
+- name: Copy crt and key files
   become: true
-  unarchive: 
-    src: "{{ openvpn_client_key_arch_base_name }}{{ play_hosts.index(inventory_hostname)+1 }}.tar.gz"
-    dest: "{{ openvpn_client_etc_dir }}"
-    owner: root
-    group: root
-    mode: 0600
+  copy: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=0600
+  with_items:
+    - { src: files/{{ openvpn_client_ca_crt_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_ca_crt_file_name }} }
+    - { src: files/clients/{{ openvpn_client_client_crt_file_name }}{{ play_hosts.index(inventory_hostname)+1 }} , dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_crt_file_name }}} 
+    - { src: files/clients/{{ openvpn_client_client_key_file_name }}{{ play_hosts.index(inventory_hostname)+1 }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_key_file_name }} }
+    - { src: files/{{ openvpn_client_ta_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_ta_file_name }}}
   notify:
     - reload_openvpn
   when: openvpn_client_pers_keys  == true
 
 - name: Extract config and keys for all hosts
   become: true
-  unarchive:
-    src: "{{ openvpn_client_key_arch_base_name }}.tar.gz"
-    dest: "{{ openvpn_client_etc_dir }}"
-    owner: root
-    group: root
-    mode: 0600
+  copy: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=0600
+  with_items:
+    - { src: files/{{ openvpn_client_ca_crt_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_ca_crt_file_name }} }
+    - { src: files/clients/{{ openvpn_client_client_crt_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_crt_file_name }} }
+    - { src: files/clients/{{ openvpn_client_client_key_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_key_file_name }} }
+    - { src: files/{{ openvpn_client_ta_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_ta_file_name }} }
   notify:
     - reload_openvpn
   when:  openvpn_client_pers_keys == false

@@ -7,3 +7,5 @@
   notify:
     - enable_openvpn_service
 
+- name: Print out the group_names
+  debug: msg="{{ hostvars.group_names[] }}"

@@ -11,6 +11,7 @@
   systemd:
     name: openvpn
     enabled: true
-  notify: enable_openvpn_service
+  notify: 
+    - enable_openvpn_service
   when: apt_openvpnclientinstall.changed
 

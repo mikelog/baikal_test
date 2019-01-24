@@ -1,7 +1,9 @@
 ---
 - name: reload_openvpn
   become: yes
-  systemd: name=openvpn state=restarted
+  service: 
+    name: openvpn@client.service 
+    state: restarted
   
 - name: collect facts about system services
   service_facts:

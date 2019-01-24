@@ -4,14 +4,6 @@
   apt: 
     name: ['openvpn=2.3.10-1ubuntu2.1']
     install_recommends: yes
-  register: apt_openvpnclientinstall
-
-- name: Enable OpenVpnClient
-  become: true
-  systemd:
-    name: openvpn
-    enabled: true
-  notify: 
+  notify:
     - enable_openvpn_service
-  when: apt_openvpnclientinstall.changed
 

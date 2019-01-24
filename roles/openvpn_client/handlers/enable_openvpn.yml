@@ -5,6 +5,6 @@
     name: openvpn
     enabled: true
 
-- name: Show startup status openvpn clien
+- name: Show startup status openvpn client
   debug: "msg='OpenVPN Clien is enabled for startup on boot'"
   listen: enable_openvpn_service

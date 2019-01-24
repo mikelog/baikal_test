@@ -5,5 +5,5 @@ vpn_clients:
 
     instance-3:
       ansible_host: 34.76.224.196
-    vars:
-      keys_archive: "lalala.tar.gz"
+  vars:
+    keys_archive: "lalala.tar.gz"

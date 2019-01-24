@@ -3,9 +3,9 @@
   copy: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=0600
   with_items:
     - { src: "./files/{{ openvpn_client_ca_crt_file_name }}", dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_ca_crt_file_name }}" }
-    - { src: "./files/clients/{{ openvpn_client_client_crt_file_name }}{{ play_hosts.index(inventory_hostname)+1 }}" , dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_crt_file_name }} } 
-    - { src: "./files/clients/{{ openvpn_client_client_key_file_name }}{{ play_hosts.index(inventory_hostname)+1 }}", dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_key_file_name }} }
-    - { src: "./files/{{ openvpn_client_ta_file_name }}", dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_ta_file_name }} }
+    - { src: "./files/clients/{{ openvpn_client_client_crt_file_name }}{{ play_hosts.index(inventory_hostname)+1 }}" , dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_client_crt_file_name }}" } 
+    - { src: "./files/clients/{{ openvpn_client_client_key_file_name }}{{ play_hosts.index(inventory_hostname)+1 }}", dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_client_key_file_name }}" }
+    - { src: "./files/{{ openvpn_client_ta_file_name }}", dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_ta_file_name }}" }
   notify:
     - reload_openvpn
   when: openvpn_client_pers_keys  == true
@@ -14,10 +14,10 @@
   become: true
   copy: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=0600
   with_items:
-    - { src: files/{{ openvpn_client_ca_crt_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_ca_crt_file_name }} }
-    - { src: files/clients/{{ openvpn_client_client_crt_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_crt_file_name }} }
-    - { src: files/clients/{{ openvpn_client_client_key_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_client_key_file_name }} }
-    - { src: files/{{ openvpn_client_ta_file_name }}, dest: {{ openvpn_client_etc_dir }}/{{ openvpn_client_ta_file_name }} }
+    - { src: "./files/{{ openvpn_client_ca_crt_file_name }}", dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_ca_crt_file_name }}" }
+    - { src: "./files/clients/{{ openvpn_client_client_crt_file_name }}", dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_client_crt_file_name }}" }
+    - { src: "./files/clients/{{ openvpn_client_client_key_file_name }}", dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_client_key_file_name }}" }
+    - { src: "./files/{{ openvpn_client_ta_file_name }}", dest: "{{ openvpn_client_etc_dir }}/{{ openvpn_client_ta_file_name }}" }
   notify:
     - reload_openvpn
   when:  openvpn_client_pers_keys == false
